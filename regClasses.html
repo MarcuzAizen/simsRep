@@ -1,0 +1,2868 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>regClasses</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Tempusdominus Bbootstrap 4 -->
+  <link rel="stylesheet" href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+  <!-- iCheck -->
+  <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <!-- JQVMap -->
+  <link rel="stylesheet" href="plugins/jqvmap/jqvmap.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <!-- Daterange picker -->
+  <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
+  <!-- summernote -->
+  <link rel="stylesheet" href="plugins/summernote/summernote-bs4.css">
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <link rel="stylesheet" href="plugins/toastr/toastr.min.css">
+  <!--toastr-->
+</head>
+<body class="hold-transition sidebar-mini layout-fixed">
+<div class="wrapper">
+
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-primary navbar-light">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
+      </li>
+    </ul>
+
+    <!-- Right navbar links -->
+    <ul class="navbar-nav ml-auto">
+      <!-- Messages Dropdown Menu -->
+      <li class="nav-item">
+        <div class="dropdown">
+             
+          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Marcuz Aizen  <i class="nav-icon fas fa-user"></i>
+          <span class="caret"></span></button>
+          <ul class="dropdown-menu dropdown-menu-lg-right">
+              <li class="nav-item"><a href="./changePassword.html" class="dropdown-item">Change Password</a></li>
+              <li class="nav-item"><a href="./homePage.html" class="dropdown-item">Logout</a></li>
+              <div class="dropdown-divider"></div>
+              <li class="nav-item"><a href="./createAdmin.html" class="dropdown-item">Add Registrar&nbsp;&nbsp;<i class="fas fa-user"></i></a></li>
+            </div>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </nav>
+  <!-- /.navbar -->
+
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-light-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="#" class="brand-link navbar-primary">
+      <img src="./dist/img/logo.png" class="brand-image">
+      <span class="brand-text font-weight-light">LakeView Academy</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+               <li class="nav-item">
+                <a href="./regChart.html" class="nav-link">
+                  <i class="nav-icon fas fa-chart-pie"></i>
+                  <p>
+                    Chart
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="./regViewTeacher.html" class="nav-link">
+                  <i class="nav-icon fas fa-chalkboard-teacher"></i>
+                  <p>
+                    Teacher
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="./regViewStudent.html" class="nav-link">
+                  <i class="nav-icon fas fa-child"></i>
+                  <p>
+                    Student
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="./regClasses.html" class="nav-link active">
+                  <i class="nav-icon fas fa-table"></i>
+                  <p>
+                    Classes
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="./regRecRep.html" class="nav-link">
+                  <i class="nav-icon fas fa-edit"></i>
+                  <p>
+                    Records and Reports
+                  </p>
+                </a>
+              </li>
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+
+
+
+
+  <div class="content-wrapper">
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-12">
+            <h1><i class="fas fa-table"></i> Classes</h1><hr>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12 col-sm-12 col-lg-12">
+            <div class="card card-primary card-tabs">
+              <div class="card-header p-0 pt-1 bg-gradient-blue">
+                <ul class="nav nav-tabs" id="custom-tabs-one-tab" role="tablist">
+                  <li class="nav-item">
+                    <a class="nav-link active" id="section-tab" data-toggle="pill" href="#section" role="tab" aria-controls="section" aria-selected="true">Sections</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="subject-tab" data-toggle="pill" href="#subject" role="tab" aria-controls="subject" aria-selected="false">Subjects</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="schedule-tab" data-toggle="pill" href="#schedule" role="tab" aria-controls="schedule" aria-selected="false">Schedules</a>
+                  </li>                 
+                </ul>
+              </div>
+              <div class="card-body">
+                <div class="tab-content" id="custom-tabs-one-tabContent">
+                  <div class="tab-pane fade show active" id="section" role="tabpanel" aria-labelledby="section-tab">
+
+                    <section class="content">
+                      <div class="container-fluid">
+                        <div class="row">
+                          <div class="col-md-12">
+                            <div class="card">
+                              <div class="card-header bg-gradient-blue">
+                                <h3 class="card-title">Junior High</h3>             
+                                <a href="#" class="text-white float-sm-right" data-toggle="modal" data-target="#addSection"><i class="nav-icon fas fa-plus"></i>  Add Section</a>
+                              </div>
+                              <!-- /.card-header -->
+                              <div class="card-body">
+                                <table class="table table-bordered">
+                                  <thead>                  
+                                    <tr>                                   
+                                      <th>Section No.</th>
+                                      <th>Section Name</th>
+                                      <th colspan="4">Number of Students</th>
+                                    </tr>
+                                    <tr>                                   
+                                      <th colspan="2"></th>
+                                      <th>MALE</th>
+                                      <th>FEMALE</th>
+                                      <th>TOTAL</th>
+                                      <th></th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <td>1.</td>
+                                      <td>PEARL</td>
+                                      <td>15</td>
+                                      <td>16</td>
+                                      <td>31</td>
+                                      <td style="text-align: center; vertical-align: middle;">
+                                        <input type="checkbox" name="report_myTextEditBox" value="checked" checked="true">
+                                    </td>
+                                    </tr>
+                                    <tr>
+                                      <td>2.</td>
+                                      <td>ONYX</td>
+                                      <td>11</td>
+                                      <td>19</td>
+                                      <td>30</td>
+                                      <td style="text-align: center; vertical-align: middle;">
+                                        <input type="checkbox" name="report_myTextEditBox" value="checked" checked="true">
+                                    </td>
+                                    </tr>
+                                    <tr>
+                                      <td>3.</td>
+                                      <td>AMETHYST</td>
+                                      <td>16</td>
+                                      <td>13</td>
+                                      <td>29</td>
+                                      <td style="text-align: center; vertical-align: middle;">
+                                        <input type="checkbox" name="report_myTextEditBox" value="checked" checked="true">
+                                    </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                              
+                              <!-- /.card-body -->
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row"> 
+                          <div class="col-md-12">
+                            <div class="card">
+                              <div class="card-header bg-gradient-blue">
+                                <h3 class="card-title">Senior High</h3>
+                                <a href="#" class="text-white float-sm-right" data-toggle="modal" data-target="#addTrack"><i class="nav-icon fas fa-plus"></i>  Add Track</a>
+                              </div>
+                              <!-- /.card-header -->
+                              <div class="card-body">
+                                <table class="table table-bordered">
+                                  <thead>
+                                    <tr>                                   
+                                      <th colspan="6">GAS
+                                      <a href="#" class="text-blue float-sm-right" data-toggle="modal" data-target="#addSection"><i class="nav-icon fas fa-plus"></i>  Add Section</a>
+                                      </th>
+                                    </tr>                  
+                                    <tr>                                   
+                                      <th>Section No.</th>
+                                      <th>Section Name</th>
+                                      <th colspan="4">Number of Students</th>
+                                    </tr>
+                                    <tr>                                   
+                                      <th colspan="2"></th>
+                                      <th>MALE</th>
+                                      <th>FEMALE</th>
+                                      <th>TOTAL</th>
+                                      <th></th>
+                                    </tr>                   
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <td>1.</td>
+                                      <td>ROSE</td>
+                                      <td>12</td>
+                                      <td>14</td>
+                                      <td>26</td>
+                                      <td style="text-align: center; vertical-align: middle;">
+                                        <input type="checkbox" name="report_myTextEditBox" value="checked" checked="true">
+                                    </td>
+                                    </tr>
+                                    <tr>
+                                      <td>2.</td>
+                                      <td>TULIP</td>
+                                      <td>17</td>
+                                      <td>11</td>
+                                      <td>28</td>
+                                      <td style="text-align: center; vertical-align: middle;">
+                                        <input type="checkbox" name="report_myTextEditBox" value="checked" checked="true">
+                                    </td>
+                                    </tr>
+                                    <tr>
+                                      <td>3.</td>
+                                      <td>SUNFLOWER</td>
+                                      <td>19</td>
+                                      <td>13</td>
+                                      <td>32</td>
+                                      <td style="text-align: center; vertical-align: middle;">
+                                        <input type="checkbox" name="report_myTextEditBox" value="checked" checked="true">
+                                    </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                              <div class="card-body">
+                                <table class="table table-bordered">
+                                  <thead>
+                                    <tr>                                   
+                                      <th colspan="6">STEM
+                                      <a href="#" class="text-blue float-sm-right" data-toggle="modal" data-target="#addSection"><i class="nav-icon fas fa-plus"></i>  Add Section</a>
+                                      </th>
+                                    </tr>                  
+                                    <tr>                                   
+                                      <th>Section No.</th>
+                                      <th>Section Name</th>
+                                      <th colspan="4">Number of Students</th>
+                                    </tr>
+                                    <tr>                                   
+                                      <th colspan="2"></th>
+                                      <th>MALE</th>
+                                      <th>FEMALE</th>
+                                      <th>TOTAL</th>
+                                      <th></th>
+                                    </tr>                   
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <td>1.</td>
+                                      <td>ROSE</td>
+                                      <td>12</td>
+                                      <td>14</td>
+                                      <td>26</td>
+                                      <td style="text-align: center; vertical-align: middle;">
+                                        <input type="checkbox" name="report_myTextEditBox" value="checked" checked="true">
+                                    </td>
+                                    </tr>
+                                    <tr>
+                                      <td>2.</td>
+                                      <td>TULIP</td>
+                                      <td>17</td>
+                                      <td>11</td>
+                                      <td>28</td>
+                                      <td style="text-align: center; vertical-align: middle;">
+                                        <input type="checkbox" name="report_myTextEditBox" value="checked" checked="true">
+                                    </td>
+                                    </tr>
+                                    <tr>
+                                      <td>3.</td>
+                                      <td>SUNFLOWER</td>
+                                      <td>19</td>
+                                      <td>13</td>
+                                      <td>32</td>
+                                      <td style="text-align: center; vertical-align: middle;">
+                                        <input type="checkbox" name="report_myTextEditBox" value="checked" checked="true">
+                                    </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                              <!-- /.card-body -->
+                            </div>
+                          </div>             
+                        </div>
+                      </div>
+                    </section>     
+                  </div>
+                  <div class="tab-pane fade" id="subject" role="tabpanel" aria-labelledby="subject-tab">
+                   
+                    <section class="content">
+                      <div class="container-fluid">
+                          <div class="row">
+                            <div class="col-12">
+                              <div class="card">
+                                <div class="card-header bg-gradient-blue">
+                                      <h4 class="card-title p-2">Junior High</h4> 
+                                      <div class="card-tools">
+                                        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+                                        </button>
+                                      </div>                                                                         
+                                </div>
+                                <!-- /.card-header -->
+                                <div class="card-body">
+                                  <div class="row">
+                                    <div class="col-6">
+                                      <table id="grade7" class="table table-bordered table-hover text-xs">
+                                        <thead>
+                                        <tr>
+                                          <th colspan="2">Grade 7, School Year 2020-2021
+                                          </th>
+                                          </tr>
+                                        <tr>
+                                        
+                                          <th>Subject Name</th>
+                                          <th><a href="#" class="text-blue float-sm-right" data-toggle="modal" data-target="#addSubject"><i class="nav-icon fas fa-plus"></i>  Add Subject</a></th>                                       
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                        
+                                          <td>Bible</td>
+                                          <td style="text-align: center; vertical-align: middle;">
+                                            <input type="checkbox" name="report_myTextEditBox" value="checked" checked="true">
+                                        </td>
+                                          
+                                        </tr>
+                                        <tr>
+                                          
+                                          <td>English</td>
+                                          <td style="text-align: center; vertical-align: middle;">
+                                            <input type="checkbox" name="report_myTextEditBox" value="checked" checked="true">
+                                        </td>
+                                        
+                                        </tr>
+                                        <tr>
+                                          
+                                          <td>Math</td>
+                                          <td style="text-align: center; vertical-align: middle;">
+                                            <input type="checkbox" name="report_myTextEditBox" value="checked" checked="true">
+                                        </td>
+                                          
+                                        </tr>
+                                        <tr>
+                                          
+                                          <td>Science</td>
+                                          <td style="text-align: center; vertical-align: middle;">
+                                            <input type="checkbox" name="report_myTextEditBox" value="checked" checked="true">
+                                        </td>
+                                          
+                                        </tr>
+                                        <tr>
+                                        
+                                          <td>Aralin Panlipunan sdfsdfdsfsfsfd</td>
+                                          <td style="text-align: center; vertical-align: middle;">
+                                            <input type="checkbox" name="report_myTextEditBox" value="checked" checked="true">
+                                        </td>                        
+                                        </tr>
+                                        <tr>
+                                    
+                                        <td>Social Education</td>
+                                        <td style="text-align: center; vertical-align: middle;">
+                                          <input type="checkbox" name="report_myTextEditBox" value="checked" checked="true">
+                                      </td>                        
+                                        </tr>
+                                        <tr>
+                                        
+                                        <td>History</td>
+                                        <td style="text-align: center; vertical-align: middle;">
+                                          <input type="checkbox" name="report_myTextEditBox" value="checked" checked="true">
+                                      </td>                        
+                                        </tr>                    
+                                        </tfoot>
+                                      </table>
+                                    </div>
+                                    <div class="col-6">
+                                      <table id="grade7" class="table table-bordered table-hover text-xs">
+                                        <thead>
+                                        <tr>
+                                          <th colspan="2">Grade 8, School Year 2020-2021
+                                          </th>
+                                          </tr>
+                                        <tr>
+                                        
+                                          <th>Subject Name</th>
+                                          <th><a href="#" class="text-blue float-sm-right" data-toggle="modal" data-target="#addSubject"><i class="nav-icon fas fa-plus"></i>  Add Subject</a></th>                                       
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                        
+                                          <td>Bible</td>
+                                          <td style="text-align: center; vertical-align: middle;">
+                                            <input type="checkbox" name="report_myTextEditBox" value="checked" checked="true">
+                                        </td>
+                                          
+                                        </tr>
+                                        <tr>
+                                          
+                                          <td>English</td>
+                                          <td style="text-align: center; vertical-align: middle;">
+                                            <input type="checkbox" name="report_myTextEditBox" value="checked" checked="true">
+                                        </td>
+                                        
+                                        </tr>
+                                        <tr>
+                                          
+                                          <td>Math</td>
+                                          <td style="text-align: center; vertical-align: middle;">
+                                            <input type="checkbox" name="report_myTextEditBox" value="checked" checked="true">
+                                        </td>
+                                          
+                                        </tr>
+                                        <tr>
+                                          
+                                          <td>Science</td>
+                                          <td style="text-align: center; vertical-align: middle;">
+                                            <input type="checkbox" name="report_myTextEditBox" value="checked" checked="true">
+                                        </td>
+                                          
+                                        </tr>
+                                        <tr>
+                                        
+                                          <td>Aralin Panlipunan</td>
+                                          <td style="text-align: center; vertical-align: middle;">
+                                            <input type="checkbox" name="report_myTextEditBox" value="checked" checked="true">
+                                        </td>                        
+                                        </tr>
+                                        <tr>
+                                    
+                                        <td>Social Education</td>
+                                        <td style="text-align: center; vertical-align: middle;">
+                                          <input type="checkbox" name="report_myTextEditBox" value="checked" checked="true">
+                                      </td>                        
+                                        </tr>
+                                        <tr>
+                                        
+                                        <td>History</td>
+                                        <td style="text-align: center; vertical-align: middle;">
+                                          <input type="checkbox" name="report_myTextEditBox" value="checked" checked="true">
+                                      </td>                        
+                                        </tr>                    
+                                        </tfoot>
+                                      </table>
+                                    </div>
+                                  </div>
+                                  <div class="row">
+                                    <div class="col-6">
+                                      <table id="grade7" class="table table-bordered table-hover text-xs">
+                                        <thead>
+                                        <tr>
+                                          <th colspan="2">Grade 9, School Year 2020-2021
+                                          </th>
+                                          </tr>
+                                        <tr>
+                                        
+                                          <th>Subject Name</th>
+                                          <th><a href="#" class="text-blue float-sm-right" data-toggle="modal" data-target="#addSubject"><i class="nav-icon fas fa-plus"></i>  Add Subject</a></th>                                       
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                        
+                                          <td>Bible</td>
+                                          <td style="text-align: center; vertical-align: middle;">
+                                            <input type="checkbox" name="report_myTextEditBox" value="checked" checked="true">
+                                        </td>
+                                          
+                                        </tr>
+                                        <tr>
+                                          
+                                          <td>English</td>
+                                          <td style="text-align: center; vertical-align: middle;">
+                                            <input type="checkbox" name="report_myTextEditBox" value="checked" checked="true">
+                                        </td>
+                                        
+                                        </tr>
+                                        <tr>
+                                          
+                                          <td>Math</td>
+                                          <td style="text-align: center; vertical-align: middle;">
+                                            <input type="checkbox" name="report_myTextEditBox" value="checked" checked="true">
+                                        </td>
+                                          
+                                        </tr>
+                                        <tr>
+                                          
+                                          <td>Science</td>
+                                          <td style="text-align: center; vertical-align: middle;">
+                                            <input type="checkbox" name="report_myTextEditBox" value="checked" checked="true">
+                                        </td>
+                                          
+                                        </tr>
+                                        <tr>
+                                        
+                                          <td>Aralin Panlipunan</td>
+                                          <td style="text-align: center; vertical-align: middle;">
+                                            <input type="checkbox" name="report_myTextEditBox" value="checked" checked="true">
+                                        </td>                        
+                                        </tr>
+                                        <tr>
+                                    
+                                        <td>Social Education</td>
+                                        <td style="text-align: center; vertical-align: middle;">
+                                          <input type="checkbox" name="report_myTextEditBox" value="checked" checked="true">
+                                      </td>                        
+                                        </tr>
+                                        <tr>
+                                        
+                                        <td>History</td>
+                                        <td style="text-align: center; vertical-align: middle;">
+                                          <input type="checkbox" name="report_myTextEditBox" value="checked" checked="true">
+                                      </td>                        
+                                        </tr>                    
+                                        </tfoot>
+                                      </table>
+                                    </div>
+                                    <div class="col-6">
+                                      <table id="grade7" class="table table-bordered table-hover text-xs">
+                                        <thead>
+                                        <tr>
+                                          <th colspan="2">Grade 10, School Year 2020-2021
+                                          </th>
+                                          </tr>
+                                        <tr>
+                                        
+                                          <th>Subject Name</th>
+                                          <th><a href="#" class="text-blue float-sm-right" data-toggle="modal" data-target="#addSubject"><i class="nav-icon fas fa-plus"></i>  Add Subject</a></th>                                       
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                        
+                                          <td>Bible</td>
+                                          <td style="text-align: center; vertical-align: middle;">
+                                            <input type="checkbox" name="report_myTextEditBox" value="checked" checked="true">
+                                        </td>
+                                          
+                                        </tr>
+                                        <tr>
+                                          
+                                          <td>English</td>
+                                          <td style="text-align: center; vertical-align: middle;">
+                                            <input type="checkbox" name="report_myTextEditBox" value="checked" checked="true">
+                                        </td>
+                                        
+                                        </tr>
+                                        <tr>
+                                          
+                                          <td>Math</td>
+                                          <td style="text-align: center; vertical-align: middle;">
+                                            <input type="checkbox" name="report_myTextEditBox" value="checked" checked="true">
+                                        </td>
+                                          
+                                        </tr>
+                                        <tr>
+                                          
+                                          <td>Science</td>
+                                          <td style="text-align: center; vertical-align: middle;">
+                                            <input type="checkbox" name="report_myTextEditBox" value="checked" checked="true">
+                                        </td>
+                                          
+                                        </tr>
+                                        <tr>
+                                        
+                                          <td>Aralin Panlipunan</td>
+                                          <td style="text-align: center; vertical-align: middle;">
+                                            <input type="checkbox" name="report_myTextEditBox" value="checked" checked="true">
+                                        </td>                        
+                                        </tr>
+                                        <tr>
+                                    
+                                        <td>Social Education</td>
+                                        <td style="text-align: center; vertical-align: middle;">
+                                          <input type="checkbox" name="report_myTextEditBox" value="checked" checked="true">
+                                      </td>                        
+                                        </tr>
+                                        <tr>
+                                        
+                                        <td>History</td>
+                                        <td style="text-align: center; vertical-align: middle;">
+                                          <input type="checkbox" name="report_myTextEditBox" value="checked" checked="true">
+                                      </td>                        
+                                        </tr>                    
+                                        </tfoot>
+                                      </table>
+                                    </div>
+                                  </div>
+                                </div>
+                                <!-- /.card-body -->
+                              </div>
+                              <!-- /.card -->      
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-12">
+                              <div class="card">
+                                <div class="card-header bg-gradient-blue">
+                                  <div class="row">
+                                    <div class="col-10 p-2">
+                                      <h4 class="card-title">Senior High</h4>
+                                    </div>
+                                   
+                                     
+                                   
+                                  </div>                                                          
+                                </div>
+                                <!-- /.card-header -->
+                                  <div class="card-body">
+                                    <div class="col-12">
+                                      <div class="row">
+                                        <div class="col-6">
+                                          <table id="gas" class="table table-bordered table-hover text-xs">
+                                            <thead>
+                                              <tr>
+                                                <th colspan="2">GAS</th>
+                                                
+                                                                             
+                                              </tr>                                          
+                                            <tr>
+                                      
+                                              <th colspan="2">1st Semester, 
+                                                School Year 2020-2021</th>
+                                                                           
+                                            </tr>                                     
+                                              <tr>
+                                        
+                                                <th>Subject Name</th>
+                                                <th><a href="#" class="text-blue float-sm-right" data-toggle="modal" data-target="#addSubject"><i class="nav-icon fas fa-plus"></i>  Add Subject</a></th>                                       
+                                              </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                             
+                                              <td>Humanities 1</td>
+                                              <td style="text-align: center; vertical-align: middle;">
+                                                <input type="checkbox" name="report_myTextEditBox" value="checked" checked="true">
+                                            </td>
+                                            </tr>
+                                            <tr>
+                                              
+                                              <td>Humanities 2</td>
+                                              <td style="text-align: center; vertical-align: middle;">
+                                                <input type="checkbox" name="report_myTextEditBox" value="checked" checked="true">
+                                            </td>
+                                            </tr>
+                                            <tr>
+                                             
+                                              <td>Social Science 1</td>
+                                              <td style="text-align: center; vertical-align: middle;">
+                                                <input type="checkbox" name="report_myTextEditBox" value="checked" checked="true">
+                                            </td>
+                                            </tr>
+                                            <tr>
+                                             
+                                              <td>Applied Economics</td>
+                                              <td style="text-align: center; vertical-align: middle;">
+                                                <input type="checkbox" name="report_myTextEditBox" value="checked" checked="true">
+                                            </td>
+                                            </tr>                                       
+                                            </tfoot>
+                                          </table>
+                                        </div>
+                                        <div class="col-6">
+                                          <table id="gas" class="table table-bordered table-hover text-xs">
+                                            <thead>
+                                              <tr>
+                                                <th colspan="2">GAS</th>
+                                                
+                                                                             
+                                              </tr>                                          
+                                            <tr>
+                                      
+                                              <th colspan="2">2nd Semester, 
+                                                School Year 2020-2021</th>
+                                                                           
+                                            </tr>                                     
+                                              <tr>
+                                        
+                                                <th>Subject Name</th>
+                                                <th><a href="#" class="text-blue float-sm-right" data-toggle="modal" data-target="#addSubject"><i class="nav-icon fas fa-plus"></i>  Add Subject</a></th>                                       
+                                              </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                             
+                                              <td>Humanities 1</td>
+                                              <td style="text-align: center; vertical-align: middle;">
+                                                <input type="checkbox" name="report_myTextEditBox" value="checked" checked="true">
+                                            </td>
+                                            </tr>
+                                            <tr>
+                                              
+                                              <td>Humanities 2</td>
+                                              <td style="text-align: center; vertical-align: middle;">
+                                                <input type="checkbox" name="report_myTextEditBox" value="checked" checked="true">
+                                            </td>
+                                            </tr>
+                                            <tr>
+                                             
+                                              <td>Social Science 1</td>
+                                              <td style="text-align: center; vertical-align: middle;">
+                                                <input type="checkbox" name="report_myTextEditBox" value="checked" checked="true">
+                                            </td>
+                                            </tr>
+                                            <tr>
+                                             
+                                              <td>Applied Economics</td>
+                                              <td style="text-align: center; vertical-align: middle;">
+                                                <input type="checkbox" name="report_myTextEditBox" value="checked" checked="true">
+                                            </td>
+                                            </tr>                                       
+                                            </tfoot>
+                                          </table>
+                                        </div>
+                                      </div>                                     
+                                    </div>
+                                  </div>
+
+                                  <div class="card-body">
+                                    <div class="col-12">
+                                      <div class="row">
+                                        <div class="col-6">
+                                          <table id="gas" class="table table-bordered table-hover text-xs">
+                                            <thead>
+                                              <tr>
+                                                <th colspan="2">STEM</th>
+                                                
+                                                                             
+                                              </tr>                                          
+                                            <tr>
+                                      
+                                              <th colspan="2">1st Semester, 
+                                                School Year 2020-2021</th>
+                                                                           
+                                            </tr>                                     
+                                              <tr>
+                                        
+                                                <th>Subject Name</th>
+                                                <th><a href="#" class="text-blue float-sm-right" data-toggle="modal" data-target="#addSubject"><i class="nav-icon fas fa-plus"></i>  Add Subject</a></th>                                       
+                                              </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                             
+                                              <td>Pre-Calculus</td>
+                                              <td style="text-align: center; vertical-align: middle;">
+                                                <input type="checkbox" name="report_myTextEditBox" value="checked" checked="true">
+                                            </td>
+                                            </tr>
+                                            <tr>
+                                              
+                                              <td>Basic Calculus</td>
+                                              <td style="text-align: center; vertical-align: middle;">
+                                                <input type="checkbox" name="report_myTextEditBox" value="checked" checked="true">
+                                            </td>
+                                            </tr>
+                                            <tr>
+                                             
+                                              <td>Social Science 1</td>
+                                              <td style="text-align: center; vertical-align: middle;">
+                                                <input type="checkbox" name="report_myTextEditBox" value="checked" checked="true">
+                                            </td>
+                                            </tr>
+                                            <tr>
+                                             
+                                              <td>Applied Economics</td>
+                                              <td style="text-align: center; vertical-align: middle;">
+                                                <input type="checkbox" name="report_myTextEditBox" value="checked" checked="true">
+                                            </td>
+                                            </tr>                                       
+                                            </tfoot>
+                                          </table>
+                                        </div>
+                                        <div class="col-6">
+                                          <table id="gas" class="table table-bordered table-hover text-xs">
+                                            <thead>
+                                              <tr>
+                                                <th colspan="2">STEM</th>
+                                                
+                                                                             
+                                              </tr>                                          
+                                            <tr>
+                                      
+                                              <th colspan="2">2nd Semester, 
+                                                School Year 2020-2021</th>
+                                                                           
+                                            </tr>                                     
+                                              <tr>
+                                        
+                                                <th>Subject Name</th>
+                                                <th><a href="#" class="text-blue float-sm-right" data-toggle="modal" data-target="#addSubject"><i class="nav-icon fas fa-plus"></i>  Add Subject</a></th>                                       
+                                              </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                             
+                                              <td>Pre-Calculus</td>
+                                              <td style="text-align: center; vertical-align: middle;">
+                                                <input type="checkbox" name="report_myTextEditBox" value="checked" checked="true">
+                                            </td>
+                                            </tr>
+                                            <tr>
+                                              
+                                              <td>Basic Calculus</td>
+                                              <td style="text-align: center; vertical-align: middle;">
+                                                <input type="checkbox" name="report_myTextEditBox" value="checked" checked="true">
+                                            </td>
+                                            </tr>
+                                            <tr>
+                                             
+                                              <td>Social Science 1</td>
+                                              <td style="text-align: center; vertical-align: middle;">
+                                                <input type="checkbox" name="report_myTextEditBox" value="checked" checked="true">
+                                            </td>
+                                            </tr>
+                                            <tr>
+                                             
+                                              <td>Applied Economics</td>
+                                              <td style="text-align: center; vertical-align: middle;">
+                                                <input type="checkbox" name="report_myTextEditBox" value="checked" checked="true">
+                                            </td>
+                                            </tr>                                       
+                                            </tfoot>
+                                          </table>
+                                        </div>
+                                      </div>                                     
+                                    </div>
+                                  </div>
+                                 
+                                 
+                                <!-- /.card-body -->
+                            </div>
+                              <!-- /.card -->      
+                            </div>
+                          </div> 
+                    </section> 
+
+                  </div>
+                  <div class="tab-pane fade" id="schedule" role="tabpanel" aria-labelledby="schedule-tab">
+                    
+                    <section class="content">
+                      <div class="container-fluid">
+                          <div class="row">
+                            <div class="col-12">
+                              <div class="card">
+                                <div class="card-header bg-gradient-blue">
+                                  <div class="row">
+                                    <div class="col-3 ">
+                                      <h4 class="card-title p-2">Junior High</h4>
+                                    </div>
+                                    <div class="col-4">
+                                      <button  type="button" class="btn btn-default float-sm-right" data-toggle="modal" data-target="#addJuniorSchedule"><i class="nav-icon fas fa-plus"></i>  Add Schedule</button>
+                                    </div>
+                                    <div class="col-5">
+                                        <select class="form-control bg-default float-sm-right" id="schedule" role="tablist">
+                                            <option>Grade 7-Pearl, School Year 2020-2021</option>                          
+                                            <option>Grade 7-Onyx, School Year 2020-2021</option>
+                                            <option>Grade 7-Amethyst, School Year 2020-2021</option>
+                                            <option>Grade 8-Rose, School Year 2020-2021</option>                          
+                                            <option>Grade 8-Tulip, School Year 2020-2021</option>
+                                            <option>Grade 8-Sunflower, School Year 2020-2021</option>
+                                        </select>
+                                    </div>
+                                  </div> 
+                                </div>
+                
+                                <div class="card-body">
+                                  <div class="tab-content" id="table-tab">
+                                    <div class="tab-pane fade show active" id="grade-7-pearl" role="tabpanel" aria-labelledby="grade-7-pearl-option">
+
+                                        <table class="table table-bordered">
+                                          <thead>
+                                          <tr>
+                                            <th colspan="4">Grade 7-Pearl, School Year 2020-2021
+                                              <a href="#" class="text-blue float-sm-right" data-toggle="modal" data-target="#editJuniorSchedule"><i class="nav-icon fas fa-edit"></i>  Edit Schedule</a>
+                                            </th>
+                                            </tr>
+                                          <tr>
+                                            <th>Subject id. No.</th>
+                                            <th>Subject Name</th>
+                                            <th>Subject Time</th>
+                                            <th>Subject Teacher</th>                                         
+                                          </tr>
+                                          </thead>
+                                          <tbody>
+                                          <tr>
+                                            <td>100102</td>
+                                            <td>Bible</td>
+                                            <td>7:30-900</td>
+                                            <td>Abyss Laruno</td>
+                                            
+                                            
+                                          </tr>
+                                          <tr>
+                                            <td>100103</td>
+                                            <td>English</td>
+                                            <td>9:00-10:30</td>
+                                            <td>Abyss Laruno</td>
+                                          </tr>
+                                          <tr>
+                                            <td>100104</td>
+                                            <td>Math</td>
+                                            <td>10:30-12:00</td>
+                                            <td>Abyss Laruno</td>
+                                          </tr>
+                                          <tr>
+                                            <td>100105</td>
+                                            <td>Science</td>
+                                            <td>1:30-3:00</td>
+                                            <td>Abyss Laruno</td>
+                                          </tr>
+                                          <tr>
+                                            <td>100106</td>
+                                            <td>Aralin Panlipunan</td>
+                                            <td>3:00-4:30</td>
+                                            <td>Abyss Laruno</td>                        
+                                          </tr>
+                                          <tr>    
+                                          </tfoot>
+                                        </table>
+                                    </div>   
+                                    
+                                  </div>
+                                </div>
+                                <!-- /.card-body -->
+                              </div>                            
+                              <!-- /.card -->                                   
+                            </div>
+                            <div class="col-12">
+                              <div class="card">
+                                <div class="card-header bg-gradient-blue">
+                                  <div class="row">
+                                    <div class="col-3 p-2">
+                                      <h4 class="card-title">Senior High</h4>
+                                    </div>
+                                    <div class="col-4">
+                                      <button  type="button" class="btn btn-default float-sm-right" data-toggle="modal" data-target="#addSeniorSchedule"><i class="nav-icon fas fa-plus"></i>  Add Schedule</button>
+                                    </div>
+                                    <div class="col-5">
+                                        <select class="form-control bg-default float-sm-right" id="schedule" role="tablist">
+                                            <option>GAS-Rose, 1st-Semester, School Year 2020-2021</option>                          
+                                            <option>GAS-Tulip, 1st-Semester, School Year 2020-2021</option>
+                                        </select>
+                                    </div>
+                                  </div> 
+                                </div>
+                
+                                <div class="card-body">
+                                  <div class="tab-content" id="table-tab">
+                                    <div class="tab-pane fade show active" id="grade-7-pearl" role="tabpanel" aria-labelledby="grade-7-pearl-option">
+
+                                        <table class="table table-bordered">
+                                          <thead>
+                                            <tr>
+                                              <th colspan="4">GAS
+                                                <a href="#" class="text-blue float-sm-right" data-toggle="modal" data-target="#editSeniorSchedule"><i class="nav-icon fas fa-edit"></i>  Edit Schedule</a>
+                                              </th>
+                                                                                     
+                                            </tr>
+                                          <tr>
+                                            <th colspan="4">Grade 7-Pearl, School Year 2020-2021
+                                            </th>
+                                            </tr>
+                                          <tr>
+                                            <th>Subject id. No.</th>
+                                            <th>Subject Name</th>
+                                            <th>Subject Time</th>
+                                            <th>Subject Teacher</th>                                         
+                                          </tr>
+                                          </thead>
+                                          <tbody>
+                                          <tr>
+                                            <td>100102</td>
+                                            <td>Bible</td>
+                                            <td>7:30-900</td>
+                                            <td>Abyss Laruno</td>
+                                            
+                                            
+                                          </tr>
+                                          <tr>
+                                            <td>100103</td>
+                                            <td>English</td>
+                                            <td>9:00-10:30</td>
+                                            <td>Abyss Laruno</td>
+                                          </tr>
+                                          <tr>
+                                            <td>100104</td>
+                                            <td>Math</td>
+                                            <td>10:30-12:00</td>
+                                            <td>Abyss Laruno</td>
+                                          </tr>
+                                          <tr>
+                                            <td>100105</td>
+                                            <td>Science</td>
+                                            <td>1:30-3:00</td>
+                                            <td>Abyss Laruno</td>
+                                          </tr>
+                                          <tr>
+                                            <td>100106</td>
+                                            <td>Aralin Panlipunan</td>
+                                            <td>3:00-4:30</td>
+                                            <td>Abyss Laruno</td>                        
+                                          </tr>
+                                          <tr>    
+                                          </tfoot>
+                                        </table>
+                                    </div>   
+                                  </div>
+                                </div>
+                                <!-- /.card-body -->
+                              </div>                            
+                              <!-- /.card -->                                   
+                            </div>
+                          </div>                         
+                      </div>
+                    </section>
+
+                  </div>
+                </div>
+              </div>
+              <!-- /.card -->
+            </div>
+          </div>
+      </div>
+    </section>
+  </div>
+ 
+  
+
+
+<!--modal for junior adding schedule-->
+<div class="modal fade" id="addJuniorSchedule">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+     
+      <div class="modal-body bg-gradient-navy">
+        <div class="form-group">
+          <div class="row">        
+            <div class="col-11">
+             <h3 class="p-2"><i class="fas fa-plus"></i> Add Schedule</h3>
+            </div>
+            <div class="col-1">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          </div><br>
+          <div class="row mb-2">
+            <select class="form-control bg-default float-sm-right" id="schedule" role="tablist">
+              <option>Grade 7-Pearl, School Year 2020-2021</option>                          
+              <option>Grade 7-Onyx, School Year 2020-2021</option>
+              <option>Grade 7-Amethyst, School Year 2020-2021</option>
+              <option>Grade 8-Rose, School Year 2020-2021</option>                          
+              <option>Grade 8-Tulip, School Year 2020-2021</option>
+              <option>Grade 8-Sunflower, School Year 2020-2021</option>
+            </select>
+          </div>
+        <br>
+          <div class="custom-control custom-checkbox">
+            <div class="row">
+              <div class="col-3">
+                <h5>Subjects</h5>
+              </div>
+              <div class="col-3">
+                <h5>From:</h5>
+              </div>
+              <div class="col-3">
+                <h5>To:</h5>
+              </div>
+              <div class="col-3">
+                <h5>Teacher</h5>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-3 p-2">
+                <input class="custom-control-input" id="customCheckbox1" type="checkbox" value="checked" checked="false">
+                <label for="customCheckbox1" class="custom-control-label">Bible</label>
+              </div>
+              <div class="col-3">                
+                  <select class="custom-select">
+                    <option>7:00</option>
+                    <option>7:30</option>
+                    <option>8:00</option>
+                    <option>8:30</option>
+                    <option>9:00</option>
+                    <option>9:30</option>
+                    <option>10:00</option>
+                    <option>10:30</option>
+                    <option>11:00</option>
+                    <option>11:30</option>
+                    <option>12:00</option>
+                    <option>12:30</option>
+                    <option>01:00</option>
+                    <option>01:30</option>
+                    <option>02:00</option>
+                    <option>02:30</option>
+                    <option>03:00</option>
+                    <option>03:30</option>
+                    <option>04:00</option>
+                    <option>04:30</option>
+                    <option>05:00</option>
+                    <option>05:30</option>
+                  </select>             
+              </div>
+              <div class="col-3">
+                <select class="custom-select">
+                  <option>7:00</option>
+                  <option>7:30</option>
+                  <option>8:00</option>
+                  <option>8:30</option>
+                  <option>9:00</option>
+                  <option>9:30</option>
+                  <option>10:00</option>
+                  <option>10:30</option>
+                  <option>11:00</option>
+                  <option>11:30</option>
+                  <option>12:00</option>
+                  <option>12:30</option>
+                  <option>01:00</option>
+                  <option>01:30</option>
+                  <option>02:00</option>
+                  <option>02:30</option>
+                  <option>03:00</option>
+                  <option>03:30</option>
+                  <option>04:00</option>
+                  <option>04:30</option>
+                  <option>05:00</option>
+                  <option>05:30</option>
+                </select>  
+              </div> 
+              <div class="col-3">
+                <select class="form-control">
+                  <option>Abyss Laruno</option>
+                  <option>George Bacabis</option>
+                  <option>Daniel Padilla</option>
+                </select>
+            </div>               
+            </div>
+          </div>
+          <div class="custom-control custom-checkbox">
+            <div class="row">
+              <div class="col-3 p-2">
+                <input class="custom-control-input" type="checkbox" id="customCheckbox2" value="checked" checked="false">
+                <label for="customCheckbox2" class="custom-control-label">English</label>
+              </div>
+              <div class="col-3">                
+                <select class="custom-select">
+                  <option>7:00</option>
+                  <option>7:30</option>
+                  <option>8:00</option>
+                  <option>8:30</option>
+                  <option>9:00</option>
+                  <option>9:30</option>
+                  <option>10:00</option>
+                  <option>10:30</option>
+                  <option>11:00</option>
+                  <option>11:30</option>
+                  <option>12:00</option>
+                  <option>12:30</option>
+                  <option>01:00</option>
+                  <option>01:30</option>
+                  <option>02:00</option>
+                  <option>02:30</option>
+                  <option>03:00</option>
+                  <option>03:30</option>
+                  <option>04:00</option>
+                  <option>04:30</option>
+                  <option>05:00</option>
+                  <option>05:30</option>
+                </select>      
+              </div>
+              <div class="col-3">
+                <select class="custom-select">
+                  <option>7:00</option>
+                  <option>7:30</option>
+                  <option>8:00</option>
+                  <option>8:30</option>
+                  <option>9:00</option>
+                  <option>9:30</option>
+                  <option>10:00</option>
+                  <option>10:30</option>
+                  <option>11:00</option>
+                  <option>11:30</option>
+                  <option>12:00</option>
+                  <option>12:30</option>
+                  <option>01:00</option>
+                  <option>01:30</option>
+                  <option>02:00</option>
+                  <option>02:30</option>
+                  <option>03:00</option>
+                  <option>03:30</option>
+                  <option>04:00</option>
+                  <option>04:30</option>
+                  <option>05:00</option>
+                  <option>05:30</option>
+                </select>    
+              </div> 
+              <div class="col-3">
+                <select class="form-control">
+                  <option>Abyss Laruno</option>
+                  <option>George Bacabis</option>
+                  <option>Daniel Padilla</option>
+                </select>
+            </div>               
+            </div>
+          </div>        
+          <div class="custom-control custom-checkbox">
+            <div class="row">
+              <div class="col-3 p-2">
+                <input class="custom-control-input" type="checkbox" id="customCheckbox3" value="checked" checked="true">
+                <label for="customCheckbox3" class="custom-control-label">Math</label>
+              </div>
+              <div class="col-3">                
+                <select class="custom-select">
+                  <option>7:00</option>
+                  <option>7:30</option>
+                  <option>8:00</option>
+                  <option>8:30</option>
+                  <option>9:00</option>
+                  <option>9:30</option>
+                  <option>10:00</option>
+                  <option>10:30</option>
+                  <option>11:00</option>
+                  <option>11:30</option>
+                  <option>12:00</option>
+                  <option>12:30</option>
+                  <option>01:00</option>
+                  <option>01:30</option>
+                  <option>02:00</option>
+                  <option>02:30</option>
+                  <option>03:00</option>
+                  <option>03:30</option>
+                  <option>04:00</option>
+                  <option>04:30</option>
+                  <option>05:00</option>
+                  <option>05:30</option>
+                </select>                
+              </div>
+              <div class="col-3">
+                <select class="custom-select">
+                  <option>7:00</option>
+                  <option>7:30</option>
+                  <option>8:00</option>
+                  <option>8:30</option>
+                  <option>9:00</option>
+                  <option>9:30</option>
+                  <option>10:00</option>
+                  <option>10:30</option>
+                  <option>11:00</option>
+                  <option>11:30</option>
+                  <option>12:00</option>
+                  <option>12:30</option>
+                  <option>01:00</option>
+                  <option>01:30</option>
+                  <option>02:00</option>
+                  <option>02:30</option>
+                  <option>03:00</option>
+                  <option>03:30</option>
+                  <option>04:00</option>
+                  <option>04:30</option>
+                  <option>05:00</option>
+                  <option>05:30</option>
+                </select>    
+              </div> 
+              <div class="col-3">
+                <select class="form-control">
+                  <option>Abyss Laruno</option>
+                  <option>George Bacabis</option>
+                  <option>Daniel Padilla</option>
+                </select>
+            </div>               
+            </div>
+          </div>
+          <div class="custom-control custom-checkbox">
+            <div class="row">
+              <div class="col-3 p-2">
+                <input class="custom-control-input" type="checkbox" id="customCheckbox4" value="checked" checked="true">
+                <label for="customCheckbox4" class="custom-control-label">Science</label>
+              </div>
+              <div class="col-3">                
+                <select class="custom-select">
+                  <option>7:00</option>
+                  <option>7:30</option>
+                  <option>8:00</option>
+                  <option>8:30</option>
+                  <option>9:00</option>
+                  <option>9:30</option>
+                  <option>10:00</option>
+                  <option>10:30</option>
+                  <option>11:00</option>
+                  <option>11:30</option>
+                  <option>12:00</option>
+                  <option>12:30</option>
+                  <option>01:00</option>
+                  <option>01:30</option>
+                  <option>02:00</option>
+                  <option>02:30</option>
+                  <option>03:00</option>
+                  <option>03:30</option>
+                  <option>04:00</option>
+                  <option>04:30</option>
+                  <option>05:00</option>
+                  <option>05:30</option>
+                </select>               
+              </div>
+              <div class="col-3">
+                <select class="custom-select">
+                  <option>7:00</option>
+                  <option>7:30</option>
+                  <option>8:00</option>
+                  <option>8:30</option>
+                  <option>9:00</option>
+                  <option>9:30</option>
+                  <option>10:00</option>
+                  <option>10:30</option>
+                  <option>11:00</option>
+                  <option>11:30</option>
+                  <option>12:00</option>
+                  <option>12:30</option>
+                  <option>01:00</option>
+                  <option>01:30</option>
+                  <option>02:00</option>
+                  <option>02:30</option>
+                  <option>03:00</option>
+                  <option>03:30</option>
+                  <option>04:00</option>
+                  <option>04:30</option>
+                  <option>05:00</option>
+                  <option>05:30</option>
+                </select>    
+              </div> 
+              <div class="col-3">
+                <select class="form-control">
+                  <option>Abyss Laruno</option>
+                  <option>George Bacabis</option>
+                  <option>Daniel Padilla</option>
+                </select>
+            </div>               
+            </div>
+          </div> 
+          <div class="custom-control custom-checkbox">
+            <div class="row">
+              <div class="col-3 p-2">
+                <input class="custom-control-input" type="checkbox" id="customCheckbox5" value="checked" checked="true">
+                <label for="customCheckbox5" class="custom-control-label">Aralin Panlipunan</label>
+              </div>
+              <div class="col-3">                
+                <select class="custom-select">
+                  <option>7:00</option>
+                  <option>7:30</option>
+                  <option>8:00</option>
+                  <option>8:30</option>
+                  <option>9:00</option>
+                  <option>9:30</option>
+                  <option>10:00</option>
+                  <option>10:30</option>
+                  <option>11:00</option>
+                  <option>11:30</option>
+                  <option>12:00</option>
+                  <option>12:30</option>
+                  <option>01:00</option>
+                  <option>01:30</option>
+                  <option>02:00</option>
+                  <option>02:30</option>
+                  <option>03:00</option>
+                  <option>03:30</option>
+                  <option>04:00</option>
+                  <option>04:30</option>
+                  <option>05:00</option>
+                  <option>05:30</option>
+                </select>                 
+              </div>
+              <div class="col-3">
+                <select class="custom-select">
+                  <option>7:00</option>
+                  <option>7:30</option>
+                  <option>8:00</option>
+                  <option>8:30</option>
+                  <option>9:00</option>
+                  <option>9:30</option>
+                  <option>10:00</option>
+                  <option>10:30</option>
+                  <option>11:00</option>
+                  <option>11:30</option>
+                  <option>12:00</option>
+                  <option>12:30</option>
+                  <option>01:00</option>
+                  <option>01:30</option>
+                  <option>02:00</option>
+                  <option>02:30</option>
+                  <option>03:00</option>
+                  <option>03:30</option>
+                  <option>04:00</option>
+                  <option>04:30</option>
+                  <option>05:00</option>
+                  <option>05:30</option>
+                </select>    
+              </div> 
+              <div class="col-3">
+                <select class="form-control">
+                  <option>Abyss Laruno</option>
+                  <option>George Bacabis</option>
+                  <option>Daniel Padilla</option>
+                </select>
+            </div>               
+            </div>
+          </div>     
+        </div><br>
+
+        <div class="social-auth-links text-center">
+          <div class="row">
+              <div class="col-6">
+                <a href="#" class="btn btn-md btn-danger" data-dismiss="modal"><i class="fas fa-times"></i>
+                  Cancel
+                </a>
+              </div>
+              <div class="col-6">
+                <a href="#" class="btn btn-md btn-primary successfullyAddScheduleToastr" data-dismiss="modal"><i class="fas fa-check"></i>
+                  Save
+               </a>
+              </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+<!--modal for adding schedule-->
+
+
+<!--modal for edit junior schedule-->
+<div class="modal fade" id="editJuniorSchedule">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-body bg-gradient-navy">
+        <div class="row">        
+          <div class="col-11">
+           <h3 class="p-2"><i class="fas fa-edit"></i> Edit Schedule</h3>
+          </div>
+          <div class="col-1">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        </div><br>
+        <div class="form-group">
+          <h5>Junior High: Grade 7-Pearl, School Year 2020-2021</h5><br>
+          <div class="custom-control custom-checkbox">
+            <div class="row">
+              <div class="col-3">
+                <h5>Subjects</h5>
+              </div>
+              <div class="col-3">
+                <h5>From:</h5>
+              </div>
+              <div class="col-3">
+                <h5>To:</h5>
+              </div>
+              <div class="col-3">
+                <h5>Teacher</h5>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-3 p-2">
+                <input class="custom-control-input" id="customCheckbox6" type="checkbox" value="checked" checked="false">
+                <label for="customCheckbox6" class="custom-control-label">Bible</label>
+              </div>
+              <div class="col-3">                
+                  <select class="custom-select">
+                    <option>7:00</option>
+                    <option>7:30</option>
+                    <option>8:00</option>
+                    <option>8:30</option>
+                    <option>9:00</option>
+                    <option>9:30</option>
+                    <option>10:00</option>
+                    <option>10:30</option>
+                    <option>11:00</option>
+                    <option>11:30</option>
+                    <option>12:00</option>
+                    <option>12:30</option>
+                    <option>01:00</option>
+                    <option>01:30</option>
+                    <option>02:00</option>
+                    <option>02:30</option>
+                    <option>03:00</option>
+                    <option>03:30</option>
+                    <option>04:00</option>
+                    <option>04:30</option>
+                    <option>05:00</option>
+                    <option>05:30</option>
+                  </select>             
+              </div>
+              <div class="col-3">
+                <select class="custom-select">
+                  <option>7:00</option>
+                  <option>7:30</option>
+                  <option>8:00</option>
+                  <option>8:30</option>
+                  <option>9:00</option>
+                  <option>9:30</option>
+                  <option>10:00</option>
+                  <option>10:30</option>
+                  <option>11:00</option>
+                  <option>11:30</option>
+                  <option>12:00</option>
+                  <option>12:30</option>
+                  <option>01:00</option>
+                  <option>01:30</option>
+                  <option>02:00</option>
+                  <option>02:30</option>
+                  <option>03:00</option>
+                  <option>03:30</option>
+                  <option>04:00</option>
+                  <option>04:30</option>
+                  <option>05:00</option>
+                  <option>05:30</option>
+                </select>  
+              </div> 
+              <div class="col-3">
+                <select class="form-control">
+                  <option>Abyss Laruno</option>
+                  <option>George Bacabis</option>
+                  <option>Daniel Padilla</option>
+                </select>
+            </div>               
+            </div>
+          </div>
+          <div class="custom-control custom-checkbox">
+            <div class="row">
+              <div class="col-3 p-2">
+                <input class="custom-control-input" type="checkbox" id="customCheckbox7" value="checked" checked="false">
+                <label for="customCheckbox7" class="custom-control-label">English</label>
+              </div>
+              <div class="col-3">                
+                <select class="custom-select">
+                  <option>7:00</option>
+                  <option>7:30</option>
+                  <option>8:00</option>
+                  <option>8:30</option>
+                  <option>9:00</option>
+                  <option>9:30</option>
+                  <option>10:00</option>
+                  <option>10:30</option>
+                  <option>11:00</option>
+                  <option>11:30</option>
+                  <option>12:00</option>
+                  <option>12:30</option>
+                  <option>01:00</option>
+                  <option>01:30</option>
+                  <option>02:00</option>
+                  <option>02:30</option>
+                  <option>03:00</option>
+                  <option>03:30</option>
+                  <option>04:00</option>
+                  <option>04:30</option>
+                  <option>05:00</option>
+                  <option>05:30</option>
+                </select>      
+              </div>
+              <div class="col-3">
+                <select class="custom-select">
+                  <option>7:00</option>
+                  <option>7:30</option>
+                  <option>8:00</option>
+                  <option>8:30</option>
+                  <option>9:00</option>
+                  <option>9:30</option>
+                  <option>10:00</option>
+                  <option>10:30</option>
+                  <option>11:00</option>
+                  <option>11:30</option>
+                  <option>12:00</option>
+                  <option>12:30</option>
+                  <option>01:00</option>
+                  <option>01:30</option>
+                  <option>02:00</option>
+                  <option>02:30</option>
+                  <option>03:00</option>
+                  <option>03:30</option>
+                  <option>04:00</option>
+                  <option>04:30</option>
+                  <option>05:00</option>
+                  <option>05:30</option>
+                </select>    
+              </div> 
+              <div class="col-3">
+                <select class="form-control">
+                  <option>Abyss Laruno</option>
+                  <option>George Bacabis</option>
+                  <option>Daniel Padilla</option>
+                </select>
+            </div>               
+            </div>
+          </div>        
+          <div class="custom-control custom-checkbox">
+            <div class="row">
+              <div class="col-3 p-2">
+                <input class="custom-control-input" type="checkbox" id="customCheckbox8" value="checked" checked="true">
+                <label for="customCheckbox8" class="custom-control-label">Math</label>
+              </div>
+              <div class="col-3">                
+                <select class="custom-select">
+                  <option>7:00</option>
+                  <option>7:30</option>
+                  <option>8:00</option>
+                  <option>8:30</option>
+                  <option>9:00</option>
+                  <option>9:30</option>
+                  <option>10:00</option>
+                  <option>10:30</option>
+                  <option>11:00</option>
+                  <option>11:30</option>
+                  <option>12:00</option>
+                  <option>12:30</option>
+                  <option>01:00</option>
+                  <option>01:30</option>
+                  <option>02:00</option>
+                  <option>02:30</option>
+                  <option>03:00</option>
+                  <option>03:30</option>
+                  <option>04:00</option>
+                  <option>04:30</option>
+                  <option>05:00</option>
+                  <option>05:30</option>
+                </select>                
+              </div>
+              <div class="col-3">
+                <select class="custom-select">
+                  <option>7:00</option>
+                  <option>7:30</option>
+                  <option>8:00</option>
+                  <option>8:30</option>
+                  <option>9:00</option>
+                  <option>9:30</option>
+                  <option>10:00</option>
+                  <option>10:30</option>
+                  <option>11:00</option>
+                  <option>11:30</option>
+                  <option>12:00</option>
+                  <option>12:30</option>
+                  <option>01:00</option>
+                  <option>01:30</option>
+                  <option>02:00</option>
+                  <option>02:30</option>
+                  <option>03:00</option>
+                  <option>03:30</option>
+                  <option>04:00</option>
+                  <option>04:30</option>
+                  <option>05:00</option>
+                  <option>05:30</option>
+                </select>    
+              </div> 
+              <div class="col-3">
+                <select class="form-control">
+                  <option>Abyss Laruno</option>
+                  <option>George Bacabis</option>
+                  <option>Daniel Padilla</option>
+                </select>
+            </div>               
+            </div>
+          </div>
+          <div class="custom-control custom-checkbox">
+            <div class="row">
+              <div class="col-3 p-2">
+                <input class="custom-control-input" type="checkbox" id="customCheckbox9" value="checked" checked="true">
+                <label for="customCheckbox9" class="custom-control-label">Science</label>
+              </div>
+              <div class="col-3">                
+                <select class="custom-select">
+                  <option>7:00</option>
+                  <option>7:30</option>
+                  <option>8:00</option>
+                  <option>8:30</option>
+                  <option>9:00</option>
+                  <option>9:30</option>
+                  <option>10:00</option>
+                  <option>10:30</option>
+                  <option>11:00</option>
+                  <option>11:30</option>
+                  <option>12:00</option>
+                  <option>12:30</option>
+                  <option>01:00</option>
+                  <option>01:30</option>
+                  <option>02:00</option>
+                  <option>02:30</option>
+                  <option>03:00</option>
+                  <option>03:30</option>
+                  <option>04:00</option>
+                  <option>04:30</option>
+                  <option>05:00</option>
+                  <option>05:30</option>
+                </select>               
+              </div>
+              <div class="col-3">
+                <select class="custom-select">
+                  <option>7:00</option>
+                  <option>7:30</option>
+                  <option>8:00</option>
+                  <option>8:30</option>
+                  <option>9:00</option>
+                  <option>9:30</option>
+                  <option>10:00</option>
+                  <option>10:30</option>
+                  <option>11:00</option>
+                  <option>11:30</option>
+                  <option>12:00</option>
+                  <option>12:30</option>
+                  <option>01:00</option>
+                  <option>01:30</option>
+                  <option>02:00</option>
+                  <option>02:30</option>
+                  <option>03:00</option>
+                  <option>03:30</option>
+                  <option>04:00</option>
+                  <option>04:30</option>
+                  <option>05:00</option>
+                  <option>05:30</option>
+                </select>    
+              </div> 
+              <div class="col-3">
+                <select class="form-control">
+                  <option>Abyss Laruno</option>
+                  <option>George Bacabis</option>
+                  <option>Daniel Padilla</option>
+                </select>
+            </div>               
+            </div>
+          </div> 
+          <div class="custom-control custom-checkbox">
+            <div class="row">
+              <div class="col-3 p-2">
+                <input class="custom-control-input" type="checkbox" id="customCheckbox0" value="checked" checked="true">
+                <label for="customCheckbox0" class="custom-control-label">Aralin Panlipunan</label>
+              </div>
+              <div class="col-3">                
+                <select class="custom-select">
+                  <option>7:00</option>
+                  <option>7:30</option>
+                  <option>8:00</option>
+                  <option>8:30</option>
+                  <option>9:00</option>
+                  <option>9:30</option>
+                  <option>10:00</option>
+                  <option>10:30</option>
+                  <option>11:00</option>
+                  <option>11:30</option>
+                  <option>12:00</option>
+                  <option>12:30</option>
+                  <option>01:00</option>
+                  <option>01:30</option>
+                  <option>02:00</option>
+                  <option>02:30</option>
+                  <option>03:00</option>
+                  <option>03:30</option>
+                  <option>04:00</option>
+                  <option>04:30</option>
+                  <option>05:00</option>
+                  <option>05:30</option>
+                </select>                 
+              </div>
+              <div class="col-3">
+                <select class="custom-select">
+                  <option>7:00</option>
+                  <option>7:30</option>
+                  <option>8:00</option>
+                  <option>8:30</option>
+                  <option>9:00</option>
+                  <option>9:30</option>
+                  <option>10:00</option>
+                  <option>10:30</option>
+                  <option>11:00</option>
+                  <option>11:30</option>
+                  <option>12:00</option>
+                  <option>12:30</option>
+                  <option>01:00</option>
+                  <option>01:30</option>
+                  <option>02:00</option>
+                  <option>02:30</option>
+                  <option>03:00</option>
+                  <option>03:30</option>
+                  <option>04:00</option>
+                  <option>04:30</option>
+                  <option>05:00</option>
+                  <option>05:30</option>
+                </select>    
+              </div> 
+              <div class="col-3">
+                <select class="form-control">
+                  <option>Abyss Laruno</option>
+                  <option>George Bacabis</option>
+                  <option>Daniel Padilla</option>
+                </select>
+            </div>               
+            </div>
+          </div>     
+        </div><br>
+        <div class="social-auth-links text-center">
+          <div class="row">
+              <div class="col-6">
+                <a href="#" class="btn btn-md btn-danger" data-dismiss="modal"><i class="fas fa-times"></i>
+                  Cancel
+                </a>
+              </div>
+              <div class="col-6">
+                <a href="#" class="btn btn-md btn-primary successfullyUpdateScheduleToastr" data-dismiss="modal"><i class="fas fa-check"></i>
+                  Update
+               </a>
+              </div>
+          </div>
+        </div>
+      </div>
+      
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+<!--modal for edit schedule-->
+
+<!--modal for senior adding schedule-->
+<div class="modal fade" id="addSeniorSchedule">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+     
+      <div class="modal-body bg-gradient-navy">
+        <div class="form-group">
+          <div class="row">        
+            <div class="col-11">
+             <h3 class="p-2"><i class="fas fa-plus"></i> Add Schedule</h3>
+            </div>
+            <div class="col-1">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          </div><br>
+          <div class="row mb-2">
+            <select class="form-control bg-default float-sm-right" id="schedule" role="tablist">
+              <option>GAS-Rose, 1st-Semester, School Year 2020-2021</option>                          
+              <option>GAS-Tulip, 1st-Semester, School Year 2020-2021</option>
+          </select>
+          </div>
+        <br>
+          <div class="custom-control custom-checkbox">
+            <div class="row">
+              <div class="col-3">
+                <h5>Subjects</h5>
+              </div>
+              <div class="col-3">
+                <h5>From:</h5>
+              </div>
+              <div class="col-3">
+                <h5>To:</h5>
+              </div>
+              <div class="col-3">
+                <h5>Teacher</h5>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-3 p-2">
+                <input class="custom-control-input" id="customCheckbox10" type="checkbox" value="checked" checked="false">
+                <label for="customCheckbox10" class="custom-control-label">Bible</label>
+              </div>
+              <div class="col-3">                
+                  <select class="custom-select">
+                    <option>7:00</option>
+                    <option>7:30</option>
+                    <option>8:00</option>
+                    <option>8:30</option>
+                    <option>9:00</option>
+                    <option>9:30</option>
+                    <option>10:00</option>
+                    <option>10:30</option>
+                    <option>11:00</option>
+                    <option>11:30</option>
+                    <option>12:00</option>
+                    <option>12:30</option>
+                    <option>01:00</option>
+                    <option>01:30</option>
+                    <option>02:00</option>
+                    <option>02:30</option>
+                    <option>03:00</option>
+                    <option>03:30</option>
+                    <option>04:00</option>
+                    <option>04:30</option>
+                    <option>05:00</option>
+                    <option>05:30</option>
+                  </select>             
+              </div>
+              <div class="col-3">
+                <select class="custom-select">
+                  <option>7:00</option>
+                  <option>7:30</option>
+                  <option>8:00</option>
+                  <option>8:30</option>
+                  <option>9:00</option>
+                  <option>9:30</option>
+                  <option>10:00</option>
+                  <option>10:30</option>
+                  <option>11:00</option>
+                  <option>11:30</option>
+                  <option>12:00</option>
+                  <option>12:30</option>
+                  <option>01:00</option>
+                  <option>01:30</option>
+                  <option>02:00</option>
+                  <option>02:30</option>
+                  <option>03:00</option>
+                  <option>03:30</option>
+                  <option>04:00</option>
+                  <option>04:30</option>
+                  <option>05:00</option>
+                  <option>05:30</option>
+                </select>  
+              </div> 
+              <div class="col-3">
+                <select class="form-control">
+                  <option>Abyss Laruno</option>
+                  <option>George Bacabis</option>
+                  <option>Daniel Padilla</option>
+                </select>
+            </div>               
+            </div>
+          </div>
+          <div class="custom-control custom-checkbox">
+            <div class="row">
+              <div class="col-3 p-2">
+                <input class="custom-control-input" type="checkbox" id="customCheckbox11" value="checked" checked="false">
+                <label for="customCheckbox11" class="custom-control-label">English</label>
+              </div>
+              <div class="col-3">                
+                <select class="custom-select">
+                  <option>7:00</option>
+                  <option>7:30</option>
+                  <option>8:00</option>
+                  <option>8:30</option>
+                  <option>9:00</option>
+                  <option>9:30</option>
+                  <option>10:00</option>
+                  <option>10:30</option>
+                  <option>11:00</option>
+                  <option>11:30</option>
+                  <option>12:00</option>
+                  <option>12:30</option>
+                  <option>01:00</option>
+                  <option>01:30</option>
+                  <option>02:00</option>
+                  <option>02:30</option>
+                  <option>03:00</option>
+                  <option>03:30</option>
+                  <option>04:00</option>
+                  <option>04:30</option>
+                  <option>05:00</option>
+                  <option>05:30</option>
+                </select>      
+              </div>
+              <div class="col-3">
+                <select class="custom-select">
+                  <option>7:00</option>
+                  <option>7:30</option>
+                  <option>8:00</option>
+                  <option>8:30</option>
+                  <option>9:00</option>
+                  <option>9:30</option>
+                  <option>10:00</option>
+                  <option>10:30</option>
+                  <option>11:00</option>
+                  <option>11:30</option>
+                  <option>12:00</option>
+                  <option>12:30</option>
+                  <option>01:00</option>
+                  <option>01:30</option>
+                  <option>02:00</option>
+                  <option>02:30</option>
+                  <option>03:00</option>
+                  <option>03:30</option>
+                  <option>04:00</option>
+                  <option>04:30</option>
+                  <option>05:00</option>
+                  <option>05:30</option>
+                </select>    
+              </div> 
+              <div class="col-3">
+                <select class="form-control">
+                  <option>Abyss Laruno</option>
+                  <option>George Bacabis</option>
+                  <option>Daniel Padilla</option>
+                </select>
+            </div>               
+            </div>
+          </div>        
+          <div class="custom-control custom-checkbox">
+            <div class="row">
+              <div class="col-3 p-2">
+                <input class="custom-control-input" type="checkbox" id="customCheckbox12" value="checked" checked="true">
+                <label for="customCheckbox12" class="custom-control-label">Math</label>
+              </div>
+              <div class="col-3">                
+                <select class="custom-select">
+                  <option>7:00</option>
+                  <option>7:30</option>
+                  <option>8:00</option>
+                  <option>8:30</option>
+                  <option>9:00</option>
+                  <option>9:30</option>
+                  <option>10:00</option>
+                  <option>10:30</option>
+                  <option>11:00</option>
+                  <option>11:30</option>
+                  <option>12:00</option>
+                  <option>12:30</option>
+                  <option>01:00</option>
+                  <option>01:30</option>
+                  <option>02:00</option>
+                  <option>02:30</option>
+                  <option>03:00</option>
+                  <option>03:30</option>
+                  <option>04:00</option>
+                  <option>04:30</option>
+                  <option>05:00</option>
+                  <option>05:30</option>
+                </select>                
+              </div>
+              <div class="col-3">
+                <select class="custom-select">
+                  <option>7:00</option>
+                  <option>7:30</option>
+                  <option>8:00</option>
+                  <option>8:30</option>
+                  <option>9:00</option>
+                  <option>9:30</option>
+                  <option>10:00</option>
+                  <option>10:30</option>
+                  <option>11:00</option>
+                  <option>11:30</option>
+                  <option>12:00</option>
+                  <option>12:30</option>
+                  <option>01:00</option>
+                  <option>01:30</option>
+                  <option>02:00</option>
+                  <option>02:30</option>
+                  <option>03:00</option>
+                  <option>03:30</option>
+                  <option>04:00</option>
+                  <option>04:30</option>
+                  <option>05:00</option>
+                  <option>05:30</option>
+                </select>    
+              </div> 
+              <div class="col-3">
+                <select class="form-control">
+                  <option>Abyss Laruno</option>
+                  <option>George Bacabis</option>
+                  <option>Daniel Padilla</option>
+                </select>
+            </div>               
+            </div>
+          </div>
+          <div class="custom-control custom-checkbox">
+            <div class="row">
+              <div class="col-3 p-2">
+                <input class="custom-control-input" type="checkbox" id="customCheckbox13" value="checked" checked="true">
+                <label for="customCheckbox13" class="custom-control-label">Science</label>
+              </div>
+              <div class="col-3">                
+                <select class="custom-select">
+                  <option>7:00</option>
+                  <option>7:30</option>
+                  <option>8:00</option>
+                  <option>8:30</option>
+                  <option>9:00</option>
+                  <option>9:30</option>
+                  <option>10:00</option>
+                  <option>10:30</option>
+                  <option>11:00</option>
+                  <option>11:30</option>
+                  <option>12:00</option>
+                  <option>12:30</option>
+                  <option>01:00</option>
+                  <option>01:30</option>
+                  <option>02:00</option>
+                  <option>02:30</option>
+                  <option>03:00</option>
+                  <option>03:30</option>
+                  <option>04:00</option>
+                  <option>04:30</option>
+                  <option>05:00</option>
+                  <option>05:30</option>
+                </select>               
+              </div>
+              <div class="col-3">
+                <select class="custom-select">
+                  <option>7:00</option>
+                  <option>7:30</option>
+                  <option>8:00</option>
+                  <option>8:30</option>
+                  <option>9:00</option>
+                  <option>9:30</option>
+                  <option>10:00</option>
+                  <option>10:30</option>
+                  <option>11:00</option>
+                  <option>11:30</option>
+                  <option>12:00</option>
+                  <option>12:30</option>
+                  <option>01:00</option>
+                  <option>01:30</option>
+                  <option>02:00</option>
+                  <option>02:30</option>
+                  <option>03:00</option>
+                  <option>03:30</option>
+                  <option>04:00</option>
+                  <option>04:30</option>
+                  <option>05:00</option>
+                  <option>05:30</option>
+                </select>    
+              </div> 
+              <div class="col-3">
+                <select class="form-control">
+                  <option>Abyss Laruno</option>
+                  <option>George Bacabis</option>
+                  <option>Daniel Padilla</option>
+                </select>
+            </div>               
+            </div>
+          </div> 
+          <div class="custom-control custom-checkbox">
+            <div class="row">
+              <div class="col-3 p-2">
+                <input class="custom-control-input" type="checkbox" id="customCheckbox14" value="checked" checked="true">
+                <label for="customCheckbox14" class="custom-control-label">Aralin Panlipunan</label>
+              </div>
+              <div class="col-3">                
+                <select class="custom-select">
+                  <option>7:00</option>
+                  <option>7:30</option>
+                  <option>8:00</option>
+                  <option>8:30</option>
+                  <option>9:00</option>
+                  <option>9:30</option>
+                  <option>10:00</option>
+                  <option>10:30</option>
+                  <option>11:00</option>
+                  <option>11:30</option>
+                  <option>12:00</option>
+                  <option>12:30</option>
+                  <option>01:00</option>
+                  <option>01:30</option>
+                  <option>02:00</option>
+                  <option>02:30</option>
+                  <option>03:00</option>
+                  <option>03:30</option>
+                  <option>04:00</option>
+                  <option>04:30</option>
+                  <option>05:00</option>
+                  <option>05:30</option>
+                </select>                 
+              </div>
+              <div class="col-3">
+                <select class="custom-select">
+                  <option>7:00</option>
+                  <option>7:30</option>
+                  <option>8:00</option>
+                  <option>8:30</option>
+                  <option>9:00</option>
+                  <option>9:30</option>
+                  <option>10:00</option>
+                  <option>10:30</option>
+                  <option>11:00</option>
+                  <option>11:30</option>
+                  <option>12:00</option>
+                  <option>12:30</option>
+                  <option>01:00</option>
+                  <option>01:30</option>
+                  <option>02:00</option>
+                  <option>02:30</option>
+                  <option>03:00</option>
+                  <option>03:30</option>
+                  <option>04:00</option>
+                  <option>04:30</option>
+                  <option>05:00</option>
+                  <option>05:30</option>
+                </select>    
+              </div> 
+              <div class="col-3">
+                <select class="form-control">
+                  <option>Abyss Laruno</option>
+                  <option>George Bacabis</option>
+                  <option>Daniel Padilla</option>
+                </select>
+            </div>               
+            </div>
+          </div>     
+        </div><br>
+
+        <div class="social-auth-links text-center">
+          <div class="row">
+              <div class="col-6">
+                <a href="#" class="btn btn-md btn-danger" data-dismiss="modal"><i class="fas fa-times"></i>
+                  Cancel
+                </a>
+              </div>
+              <div class="col-6">
+                <a href="#" class="btn btn-md btn-primary successfullyAddScheduleToastr" data-dismiss="modal"><i class="fas fa-check"></i>
+                  Save
+               </a>
+              </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+<!--modal for adding schedule-->
+
+<!--modal for edit Senior schedule-->
+<div class="modal fade" id="editSeniorSchedule">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-body bg-gradient-navy">
+        <div class="row">        
+          <div class="col-11">
+           <h3 class="p-2"><i class="fas fa-edit"></i> Edit Schedule</h3>
+          </div>
+          <div class="col-1">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        </div><br>
+        <div class="form-group">
+          <h5>Senior High: GAS-Rose, School Year 2020-2021</h5><br>
+          <div class="custom-control custom-checkbox">
+            <div class="row">
+              <div class="col-3">
+                <h5>Subjects</h5>
+              </div>
+              <div class="col-3">
+                <h5>From:</h5>
+              </div>
+              <div class="col-3">
+                <h5>To:</h5>
+              </div>
+              <div class="col-3">
+                <h5>Teacher</h5>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-3 p-2">
+                <input class="custom-control-input" id="customCheckbox15" type="checkbox" value="checked" checked="false">
+                <label for="customCheckbox15" class="custom-control-label">Bible</label>
+              </div>
+              <div class="col-3">                
+                  <select class="custom-select">
+                    <option>7:00</option>
+                    <option>7:30</option>
+                    <option>8:00</option>
+                    <option>8:30</option>
+                    <option>9:00</option>
+                    <option>9:30</option>
+                    <option>10:00</option>
+                    <option>10:30</option>
+                    <option>11:00</option>
+                    <option>11:30</option>
+                    <option>12:00</option>
+                    <option>12:30</option>
+                    <option>01:00</option>
+                    <option>01:30</option>
+                    <option>02:00</option>
+                    <option>02:30</option>
+                    <option>03:00</option>
+                    <option>03:30</option>
+                    <option>04:00</option>
+                    <option>04:30</option>
+                    <option>05:00</option>
+                    <option>05:30</option>
+                  </select>             
+              </div>
+              <div class="col-3">
+                <select class="custom-select">
+                  <option>7:00</option>
+                  <option>7:30</option>
+                  <option>8:00</option>
+                  <option>8:30</option>
+                  <option>9:00</option>
+                  <option>9:30</option>
+                  <option>10:00</option>
+                  <option>10:30</option>
+                  <option>11:00</option>
+                  <option>11:30</option>
+                  <option>12:00</option>
+                  <option>12:30</option>
+                  <option>01:00</option>
+                  <option>01:30</option>
+                  <option>02:00</option>
+                  <option>02:30</option>
+                  <option>03:00</option>
+                  <option>03:30</option>
+                  <option>04:00</option>
+                  <option>04:30</option>
+                  <option>05:00</option>
+                  <option>05:30</option>
+                </select>  
+              </div> 
+              <div class="col-3">
+                <select class="form-control">
+                  <option>Abyss Laruno</option>
+                  <option>George Bacabis</option>
+                  <option>Daniel Padilla</option>
+                </select>
+            </div>               
+            </div>
+          </div>
+          <div class="custom-control custom-checkbox">
+            <div class="row">
+              <div class="col-3 p-2">
+                <input class="custom-control-input" type="checkbox" id="customCheckbox16" value="checked" checked="false">
+                <label for="customCheckbox16" class="custom-control-label">English</label>
+              </div>
+              <div class="col-3">                
+                <select class="custom-select">
+                  <option>7:00</option>
+                  <option>7:30</option>
+                  <option>8:00</option>
+                  <option>8:30</option>
+                  <option>9:00</option>
+                  <option>9:30</option>
+                  <option>10:00</option>
+                  <option>10:30</option>
+                  <option>11:00</option>
+                  <option>11:30</option>
+                  <option>12:00</option>
+                  <option>12:30</option>
+                  <option>01:00</option>
+                  <option>01:30</option>
+                  <option>02:00</option>
+                  <option>02:30</option>
+                  <option>03:00</option>
+                  <option>03:30</option>
+                  <option>04:00</option>
+                  <option>04:30</option>
+                  <option>05:00</option>
+                  <option>05:30</option>
+                </select>      
+              </div>
+              <div class="col-3">
+                <select class="custom-select">
+                  <option>7:00</option>
+                  <option>7:30</option>
+                  <option>8:00</option>
+                  <option>8:30</option>
+                  <option>9:00</option>
+                  <option>9:30</option>
+                  <option>10:00</option>
+                  <option>10:30</option>
+                  <option>11:00</option>
+                  <option>11:30</option>
+                  <option>12:00</option>
+                  <option>12:30</option>
+                  <option>01:00</option>
+                  <option>01:30</option>
+                  <option>02:00</option>
+                  <option>02:30</option>
+                  <option>03:00</option>
+                  <option>03:30</option>
+                  <option>04:00</option>
+                  <option>04:30</option>
+                  <option>05:00</option>
+                  <option>05:30</option>
+                </select>    
+              </div> 
+              <div class="col-3">
+                <select class="form-control">
+                  <option>Abyss Laruno</option>
+                  <option>George Bacabis</option>
+                  <option>Daniel Padilla</option>
+                </select>
+            </div>               
+            </div>
+          </div>        
+          <div class="custom-control custom-checkbox">
+            <div class="row">
+              <div class="col-3 p-2">
+                <input class="custom-control-input" type="checkbox" id="customCheckbox17" value="checked" checked="true">
+                <label for="customCheckbox17" class="custom-control-label">Math</label>
+              </div>
+              <div class="col-3">                
+                <select class="custom-select">
+                  <option>7:00</option>
+                  <option>7:30</option>
+                  <option>8:00</option>
+                  <option>8:30</option>
+                  <option>9:00</option>
+                  <option>9:30</option>
+                  <option>10:00</option>
+                  <option>10:30</option>
+                  <option>11:00</option>
+                  <option>11:30</option>
+                  <option>12:00</option>
+                  <option>12:30</option>
+                  <option>01:00</option>
+                  <option>01:30</option>
+                  <option>02:00</option>
+                  <option>02:30</option>
+                  <option>03:00</option>
+                  <option>03:30</option>
+                  <option>04:00</option>
+                  <option>04:30</option>
+                  <option>05:00</option>
+                  <option>05:30</option>
+                </select>                
+              </div>
+              <div class="col-3">
+                <select class="custom-select">
+                  <option>7:00</option>
+                  <option>7:30</option>
+                  <option>8:00</option>
+                  <option>8:30</option>
+                  <option>9:00</option>
+                  <option>9:30</option>
+                  <option>10:00</option>
+                  <option>10:30</option>
+                  <option>11:00</option>
+                  <option>11:30</option>
+                  <option>12:00</option>
+                  <option>12:30</option>
+                  <option>01:00</option>
+                  <option>01:30</option>
+                  <option>02:00</option>
+                  <option>02:30</option>
+                  <option>03:00</option>
+                  <option>03:30</option>
+                  <option>04:00</option>
+                  <option>04:30</option>
+                  <option>05:00</option>
+                  <option>05:30</option>
+                </select>    
+              </div> 
+              <div class="col-3">
+                <select class="form-control">
+                  <option>Abyss Laruno</option>
+                  <option>George Bacabis</option>
+                  <option>Daniel Padilla</option>
+                </select>
+            </div>               
+            </div>
+          </div>
+          <div class="custom-control custom-checkbox">
+            <div class="row">
+              <div class="col-3 p-2">
+                <input class="custom-control-input" type="checkbox" id="customCheckbox18" value="checked" checked="true">
+                <label for="customCheckbox18" class="custom-control-label">Science</label>
+              </div>
+              <div class="col-3">                
+                <select class="custom-select">
+                  <option>7:00</option>
+                  <option>7:30</option>
+                  <option>8:00</option>
+                  <option>8:30</option>
+                  <option>9:00</option>
+                  <option>9:30</option>
+                  <option>10:00</option>
+                  <option>10:30</option>
+                  <option>11:00</option>
+                  <option>11:30</option>
+                  <option>12:00</option>
+                  <option>12:30</option>
+                  <option>01:00</option>
+                  <option>01:30</option>
+                  <option>02:00</option>
+                  <option>02:30</option>
+                  <option>03:00</option>
+                  <option>03:30</option>
+                  <option>04:00</option>
+                  <option>04:30</option>
+                  <option>05:00</option>
+                  <option>05:30</option>
+                </select>               
+              </div>
+              <div class="col-3">
+                <select class="custom-select">
+                  <option>7:00</option>
+                  <option>7:30</option>
+                  <option>8:00</option>
+                  <option>8:30</option>
+                  <option>9:00</option>
+                  <option>9:30</option>
+                  <option>10:00</option>
+                  <option>10:30</option>
+                  <option>11:00</option>
+                  <option>11:30</option>
+                  <option>12:00</option>
+                  <option>12:30</option>
+                  <option>01:00</option>
+                  <option>01:30</option>
+                  <option>02:00</option>
+                  <option>02:30</option>
+                  <option>03:00</option>
+                  <option>03:30</option>
+                  <option>04:00</option>
+                  <option>04:30</option>
+                  <option>05:00</option>
+                  <option>05:30</option>
+                </select>    
+              </div> 
+              <div class="col-3">
+                <select class="form-control">
+                  <option>Abyss Laruno</option>
+                  <option>George Bacabis</option>
+                  <option>Daniel Padilla</option>
+                </select>
+            </div>               
+            </div>
+          </div> 
+          <div class="custom-control custom-checkbox">
+            <div class="row">
+              <div class="col-3 p-2">
+                <input class="custom-control-input" type="checkbox" id="customCheckbox19" value="checked" checked="true">
+                <label for="customCheckbox19" class="custom-control-label">Aralin Panlipunan</label>
+              </div>
+              <div class="col-3">                
+                <select class="custom-select">
+                  <option>7:00</option>
+                  <option>7:30</option>
+                  <option>8:00</option>
+                  <option>8:30</option>
+                  <option>9:00</option>
+                  <option>9:30</option>
+                  <option>10:00</option>
+                  <option>10:30</option>
+                  <option>11:00</option>
+                  <option>11:30</option>
+                  <option>12:00</option>
+                  <option>12:30</option>
+                  <option>01:00</option>
+                  <option>01:30</option>
+                  <option>02:00</option>
+                  <option>02:30</option>
+                  <option>03:00</option>
+                  <option>03:30</option>
+                  <option>04:00</option>
+                  <option>04:30</option>
+                  <option>05:00</option>
+                  <option>05:30</option>
+                </select>                 
+              </div>
+              <div class="col-3">
+                <select class="custom-select">
+                  <option>7:00</option>
+                  <option>7:30</option>
+                  <option>8:00</option>
+                  <option>8:30</option>
+                  <option>9:00</option>
+                  <option>9:30</option>
+                  <option>10:00</option>
+                  <option>10:30</option>
+                  <option>11:00</option>
+                  <option>11:30</option>
+                  <option>12:00</option>
+                  <option>12:30</option>
+                  <option>01:00</option>
+                  <option>01:30</option>
+                  <option>02:00</option>
+                  <option>02:30</option>
+                  <option>03:00</option>
+                  <option>03:30</option>
+                  <option>04:00</option>
+                  <option>04:30</option>
+                  <option>05:00</option>
+                  <option>05:30</option>
+                </select>    
+              </div> 
+              <div class="col-3">
+                <select class="form-control">
+                  <option>Abyss Laruno</option>
+                  <option>George Bacabis</option>
+                  <option>Daniel Padilla</option>
+                </select>
+            </div>               
+            </div>
+          </div>     
+        </div><br>
+        <div class="social-auth-links text-center">
+          <div class="row">
+              <div class="col-6">
+                <a href="#" class="btn btn-md btn-danger" data-dismiss="modal"><i class="fas fa-times"></i>
+                  Cancel
+                </a>
+              </div>
+              <div class="col-6">
+                <a href="#" class="btn btn-md btn-primary successfullyUpdateScheduleToastr" data-dismiss="modal"><i class="fas fa-check"></i>
+                  Update
+               </a>
+              </div>
+          </div>
+        </div>
+      </div>
+      
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+<!--modal for edit schedule-->
+
+<!--modal for adding Track-->
+<div class="modal fade" id="addTrack">
+  <div class="modal-dialog modal-sm bg-gradient-lightblue">
+    <div class="modal-content">
+      <div class="modal-body bg-gradient-lightblue">
+        <div class="row">
+          <div class="col">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h5 class="p-3">Enter Track Name</h5>
+            <input type="text" class="form-control">
+            <div class="social-auth-links text-center">
+              <div class="row">
+                  <div class="col-6">
+                    <a href="#" class="btn btn-md btn-danger" data-dismiss="modal"><i class="fas fa-times"></i>
+                      Cancel
+                    </a>
+                  </div>
+                  <div class="col-6">
+                    <a href="#" class="btn btn-md btn-success successfullyAddedTrackToastr" data-dismiss="modal"><i class="fas fa-check"></i>
+                      Save
+                   </a>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--modal for adding TRack-->
+
+<!--modal for adding Track-->
+<div class="modal fade" id="addSubject">
+  <div class="modal-dialog modal-sm bg-gradient-lightblue">
+    <div class="modal-content">
+      <div class="modal-body bg-gradient-lightblue">
+        <div class="row">
+          <div class="col">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h5 class="p-3">Enter Subject Name</h5>
+            <input type="text" class="form-control">
+            <div class="social-auth-links text-center">
+              <div class="row">
+                  <div class="col-6">
+                    <a href="#" class="btn btn-md btn-danger" data-dismiss="modal"><i class="fas fa-times"></i>
+                      Cancel
+                    </a>
+                  </div>
+                  <div class="col-6">
+                    <a href="#" class="btn btn-md btn-success successfullyAddedSubjectToastr" data-dismiss="modal"><i class="fas fa-check"></i>
+                      Save
+                   </a>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--modal for adding TRack-->
+
+<!--modal for adding Sections-->
+<div class="modal fade" id="addSection">
+  <div class="modal-dialog modal-sm bg-gradient-lightblue">
+    <div class="modal-content">
+      <div class="modal-body bg-gradient-lightblue">
+        <div class="row">
+          <div class="col">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h5 class="p-3">Enter Section Name</h5>
+            <input type="text" class="form-control">
+            <div class="social-auth-links text-center">
+              <div class="row">
+                  <div class="col-6">
+                    <a href="#" class="btn btn-md btn-danger" data-dismiss="modal"><i class="fas fa-times"></i>
+                      Cancel
+                    </a>
+                  </div>
+                  <div class="col-6">
+                    <a href="#" class="btn btn-md btn-success successfullyAddedSectionToastr" data-dismiss="modal"><i class="fas fa-check"></i>
+                      Save
+                   </a>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--modal for adding Sections-->
+
+<!-- jQuery -->
+<script src="plugins/jquery/jquery.min.js"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="plugins/jquery-ui/jquery-ui.min.js"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script>
+  $.widget.bridge('uibutton', $.ui.button)
+</script>
+<!-- Bootstrap 4 -->
+<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- ChartJS -->
+<script src="plugins/chart.js/Chart.min.js"></script>
+<!-- Sparkline -->
+<script src="plugins/sparklines/sparkline.js"></script>
+<!-- JQVMap -->
+<script src="plugins/jqvmap/jquery.vmap.min.js"></script>
+<script src="plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+<!-- jQuery Knob Chart -->
+<script src="plugins/jquery-knob/jquery.knob.min.js"></script>
+<!-- daterangepicker -->
+<script src="plugins/moment/moment.min.js"></script>
+<script src="plugins/daterangepicker/daterangepicker.js"></script>
+<!-- Tempusdominus Bootstrap 4 -->
+<script src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+<!-- Summernote -->
+<script src="plugins/summernote/summernote-bs4.min.js"></script>
+<!-- overlayScrollbars -->
+<script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+<!-- AdminLTE App -->
+<script src="dist/js/adminlte.js"></script>
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<script src="dist/js/pages/dashboard.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="dist/js/demo.js"></script>
+<!-- Page specific script -->
+
+
+
+<script src="plugins/toastr/toastr.min.js"></script>
+<!-- SweetAlert2 -->
+<script src="plugins/sweetalert2/sweetalert2.min.js"></script>
+
+<!--toaster script-->
+<script type="text/javascript">
+  $(function() {
+    const Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 3000
+    });
+
+    $('.successfullyAddedSectionToastr').click(function() {
+      toastr.options.positionClass = 'toast-top-center';     
+      toastr.success(' Section has been successfully Added .')
+    });
+    $('.successfullyAddedTrackToastr').click(function() {
+      toastr.options.positionClass = 'toast-top-center';     
+      toastr.success('Track has been successfully added.')
+    });
+    $('.successfullyUpdateScheduleToastr').click(function() {
+      toastr.options.positionClass = 'toast-top-center';     
+      toastr.success('Schedule has been successfully updated.')
+    });
+    $('.successfullyAddScheduleToastr').click(function() {
+      toastr.options.positionClass = 'toast-top-center';     
+      toastr.success('Schedule has been successfully Added.')
+    });
+    $('.successfullyAddedSubjectToastr').click(function() {
+      toastr.options.positionClass = 'toast-top-center';     
+      toastr.success('Track has been successfully added.')
+    });
+    $('.toastrDefaultInfo').click(function() {
+      toastr.options.positionClass = 'toast-top-center';     
+      toastr.info('Some Dialog right here.')
+    });
+    $('.toastrDefaultError').click(function() {
+      toastr.options.positionClass = 'toast-top-center';     
+      toastr.error('Invalid Input.')
+    });
+    $('.toastrDefaultWarning').click(function() {
+      toastr.options.positionClass = 'toast-top-center';     
+      toastr.warning('You are being warned.')
+    });
+  });
+
+</script>
+<!--toaster script-->
+
+</body>
+</html>
